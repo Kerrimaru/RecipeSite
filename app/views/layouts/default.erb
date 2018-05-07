@@ -2,9 +2,22 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>title</title>
+    <link href="/assets/stylesheets/reset.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/stylesheets/main.css" rel="stylesheet" type="text/css" media="all">
+    <title>Recipe Site</title>
   </head>
   <body>
-<%= yield %>
+    <header>
+      <nav>
+        <%= link_to "Add your recipe | ", url_for(:recipes, :new) %>
+        <%= link_to "Categories | ", "/categories" %>
+        <%= link_to "Chefs | ", url_for(:chefs, :index) %>
+        <%= link_to "Home", url_for(:categories, :index) %>
+      </nav>
+      <h1>Cool Recipe Site Awesome Fun!!!!!</h1>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>

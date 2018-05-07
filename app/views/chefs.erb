@@ -1,6 +1,7 @@
 <ul>
 <% @chefs.each do |chef| %>
-  <li><%= link_to chef.name, "/chefs/#{chef.id}" %></li>
+  <li><%= link_to chef.name, "/chefs/#{chef.id}" %>
+    <span>| <%= chef.recipes.count %> <i>recipes</i></span></li>
 <% end %>
 </ul>
 

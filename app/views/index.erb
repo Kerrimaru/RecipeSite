@@ -1,6 +1,8 @@
-<ul>
-<% @categories.each do |category| %>
-  <li>
-    <%= link_to category.name, "/categories/#{category.id}"   %></li>
-<% end %>
-</ul>
+<h2>Welcome to recipe site!</h2>
+<h3>Today's featured recipe:</h3>
+<div class='featured'>
+<% feature = Recipe.order("RANDOM()").first %>
+<h4><%= feature.name %></h4>
+<p>By <%= feature.chef.name %></p>
+<p><%= feature.desc %></p>
+</div>

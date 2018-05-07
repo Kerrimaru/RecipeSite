@@ -5,6 +5,12 @@ RecipieSite::App.controllers :categories do
     render 'index'
   end
 
+  get :index, :map => '/categories' do
+    @categories = Category.all
+    render 'categories'
+  end
+
+
   get :index, :with => :category_id do
     @recipes = Recipe.includes(:categories).where(categories: { id: params[:category_id] })
     # binding.pry
